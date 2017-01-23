@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FlurmelProductions.JSONStuff.MinecraftJsonUntilities</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Olfi01</authors>
+    <owners>Olfi01</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library to create JSON-Objects for Minecraft easiliy.</description>
+    <releaseNotes>Created the package, added basic functionality</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>minecraft json</tags>
+  </metadata>
+</package>
