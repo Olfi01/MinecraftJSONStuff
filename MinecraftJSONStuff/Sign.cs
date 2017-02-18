@@ -11,7 +11,7 @@ namespace MinecraftJSONStuff
     ///This object represents a sign
     ///</summary>
     [JsonObject(MemberSerialization.OptIn)]
-    class Sign
+    public class Sign
     {
         
     }

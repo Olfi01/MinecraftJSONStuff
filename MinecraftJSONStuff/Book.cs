@@ -11,22 +11,28 @@ namespace MinecraftJSONStuff
     ///This object represents a Minecraft Book
     ///</summary>
     [JsonObject(MemberSerialization.OptIn)]
-    class Book
+    public class Book
     {
-        /// <summary>
-        /// Title of the book, can be an empty string.
-        /// </summary>
-        [JsonProperty("title", Required = Required.Always)]
         public string Title { get; set; }
-        /// <summary>
-        /// Author of the book, can be an empty string
-        /// </summary>
-        [JsonProperty("author", Required = Required.Always)]
         public string Author { get; set; }
-        /// <summary>
-        /// List of strings, which are JSON-encoded MinecraftTextParts
-        /// </summary>
-        [JsonProperty("pages", Required = Required.Default)]
-        public List<string> Pages { get; set; } = new List<string>();
+        public List<string> PagesList { get; set; }
+        public Book(string title, string author)
+        {
+            Title = title;
+            Author = author;
+            PagesList = new List<string>();
+        }
+
+        public override string ToString()
+        {
+            string str = "{\ntitle:\"" + Title + "\",\nauthor:\"" + Author
+                + "\",\npages:" + JsonConvert.SerializeObject(PagesList) + "\n}";
+            return str;
+        }
+
+        public void AddPage(Page p)
+        {
+            PagesList.Add(JsonConvert.SerializeObject(p));
+        }
     }
 }
